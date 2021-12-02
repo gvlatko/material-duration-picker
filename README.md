@@ -2,6 +2,8 @@
 
 Simple duration picker inspired by [Material-UI Pickers](https://material-ui-pickers.dev/)
 
+This is a fork from [https://github.com/tran-simon/material-duration-picker](https://github.com/tran-simon/material-duration-picker)
+
 ![image](https://user-images.githubusercontent.com/8755930/116327819-96fc1280-a795-11eb-96a6-e10722fe5b56.png)
 
 
