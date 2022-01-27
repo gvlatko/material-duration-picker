@@ -143,4 +143,50 @@ describe('DurationFieldsContainer', () => {
     expect(fields[0].value).toBe('')
     expect(fields[1].value).toBe('721')
   })
+
+
+  it('respects min value', async ()=>{
+
+    const Comp = () => {
+
+      const [value, setValue] = useState<number | undefined>(60)
+
+      return <DurationFieldsContainer
+          {...{
+            views: ['hours', 'minutes'],
+            value: value,
+            setValue,
+            DurationFieldProps: {
+              inputProps: {
+                title: 'fieldTitle',
+                min: "0"
+              },
+            },
+          }}
+      />
+    }
+
+    const utils = render(
+        <Comp/>
+    );
+
+    const fields: any[] = utils.getAllByTitle('fieldTitle')
+
+    fireEvent.change(fields[0], {target: {value: '-1'}})
+
+    expect(fields[0].value).toBe('0')
+
+    fireEvent.blur(fields[0])
+
+    expect(fields[0].value).toBe('0')
+    expect(fields[1].value).toBe('1')
+
+    fireEvent.change(fields[1], {target: {value: '-1'}});
+
+    expect(fields[1].value).toBe('0');
+
+    fireEvent.blur(fields[1]);
+    expect(fields[0].value).toBe('');
+    expect(fields[1].value).toBe('');
+  })
 })

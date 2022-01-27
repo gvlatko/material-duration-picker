@@ -27,6 +27,9 @@ export const DurationField = ({
 
   const [value, setValue] = useState<number | undefined>(duration[view] )
 
+  const hasMinValue = props.inputProps?.min? parseInt(props.inputProps.min, 10) : null;
+
+
   useEffect(() => {
     setValue(duration[view] )
   }, [duration, setValue])
@@ -36,7 +39,13 @@ export const DurationField = ({
       type="number"
       onChange={({target}) => {
         const num = +target.value
-        setValue(!isFinite(num) || target.value === '' ? undefined : num);
+
+        if (hasMinValue !== null && hasMinValue > num) {
+          setValue(target.value === '' ? undefined : hasMinValue);
+        } else
+        {
+          setValue(!isFinite(num) || target.value === '' ? undefined : num);
+        }
       }}
       onBlur={() => {
         onConfirm(value)
