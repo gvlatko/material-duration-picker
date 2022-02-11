@@ -5,6 +5,12 @@ exports[`durationPicker can match snapshot 1`] = `
   <div
     class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
   >
+    <label
+      class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+      data-shrink="false"
+    >
+      Duration
+    </label>
     <div
       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     >
@@ -20,12 +26,10 @@ exports[`durationPicker can match snapshot 1`] = `
         class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
       >
         <legend
-          class="css-nnbavb"
+          class="css-173wfxe"
         >
-          <span
-            class="notranslate"
-          >
-            ​
+          <span>
+            Duration
           </span>
         </legend>
       </fieldset>

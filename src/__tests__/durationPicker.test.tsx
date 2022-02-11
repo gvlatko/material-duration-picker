@@ -22,9 +22,13 @@ describe('durationPicker', () => {
           <DurationPicker
             value={time}
             onValueChange={onValueChange}
-            formatDuration={formatDuration}/>
+            formatDuration={formatDuration}
+            label="Duration"
+
+          />
         ).asFragment()
       ).toMatchSnapshot();
+
     })
   })
 })

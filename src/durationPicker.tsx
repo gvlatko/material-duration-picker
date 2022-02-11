@@ -45,7 +45,7 @@ export const DurationPicker = ({
       value={formatDuration(duration)}
 
       {...props}
-
+      label={label}
       InputLabelProps={{
         shrink: open || undefined,
         ...props.InputLabelProps
