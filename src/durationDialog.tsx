@@ -10,6 +10,7 @@ export type DurationDialogProps = DialogProps & {
   time: number | undefined;
   onDismiss: () => void;
   onAccept: (time: number | undefined) => void
+  label: string | undefined;
 
   views: DurationView[]
   labels?: Labels
@@ -55,7 +56,7 @@ export const DurationDialog = ({
         color: theme.palette.primary.contrastText
       }}>
         <Typography variant='h4'>
-          {duration && formatDuration(duration)}
+          {props.label ? props.label : 'Duration'}
         </Typography>
       </Toolbar>
       <DialogContent>
