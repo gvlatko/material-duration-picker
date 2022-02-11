@@ -57,7 +57,7 @@ export const DurationDialog = ({
         color: theme.palette.primary.contrastText
       }}>
         <Typography variant='h4'>
-          {props.label ? props.label : 'Duration'}
+          {label ? label : 'Duration'}
         </Typography>
       </Toolbar>
       <DialogContent>
