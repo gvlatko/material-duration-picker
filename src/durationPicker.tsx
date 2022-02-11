@@ -15,6 +15,9 @@ export type DurationPickerProps = Partial<TextFieldProps> & {
   DurationDialogProps?: Partial<DurationDialogProps>
   DurationDialogComp?: ComponentType<DurationDialogProps>;
 
+  label: string | undefined;
+
+
   TextFieldComp?: ComponentType<TextFieldProps>;
 }
 
@@ -25,6 +28,7 @@ export const DurationPicker = ({
   formatDuration,
   views = ['hours', 'minutes'],
   disableEditDialog,
+    label = 'Duration',
   DurationDialogComp = DurationDialog,
   TextFieldComp = TextField,
   ...props
@@ -59,6 +63,7 @@ export const DurationPicker = ({
         onAccept={(time) => {
           onValueChange(time)
         }}
+        label={label}
         views={views}
         formatDuration={formatDuration}
         {...DurationDialogProps}
