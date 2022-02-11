@@ -26,6 +26,7 @@ export const DurationDialog = ({
   onAccept,
   views,
   labels: _labels,
+    label,
   formatDuration,
   DurationFieldsContainerProps,
   DurationFieldsContainerComp = DurationFieldsContainer,
